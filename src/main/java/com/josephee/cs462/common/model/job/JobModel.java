@@ -9,16 +9,21 @@ public class JobModel {
     private String description;
     private ZonedDateTime jobTime;
     private ZonedDateTime rendevousTime;
+    private Long acceptedBy;
+    private boolean completed;
 
     public JobModel() {
+        this.completed = false;
     }
 
-    public JobModel(Long id, String address, String description, ZonedDateTime jobTime, ZonedDateTime rendevousTime) {
+    public JobModel(Long id, String address, String description, ZonedDateTime jobTime, ZonedDateTime rendevousTime, Long acceptedBy, boolean completed) {
         this.id = id;
         this.address = address;
         this.description = description;
         this.jobTime = jobTime;
         this.rendevousTime = rendevousTime;
+        this.acceptedBy = acceptedBy;
+        this.completed = completed;
     }
 
     public Long getId() {
@@ -61,6 +66,22 @@ public class JobModel {
         this.rendevousTime = rendevousTime;
     }
 
+    public Long getAcceptedBy() {
+        return acceptedBy;
+    }
+
+    public void setAcceptedBy(Long acceptedBy) {
+        this.acceptedBy = acceptedBy;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
     @Override
     public String toString() {
         return "JobModel{" +
@@ -69,6 +90,8 @@ public class JobModel {
                 ", description='" + description + '\'' +
                 ", jobTime=" + jobTime +
                 ", rendevousTime=" + rendevousTime +
+                ", acceptedBy=" + acceptedBy +
+                ", completed=" + completed +
                 '}';
     }
 }

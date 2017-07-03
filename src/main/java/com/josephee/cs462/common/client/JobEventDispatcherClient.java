@@ -1,6 +1,7 @@
 package com.josephee.cs462.common.client;
 
 import com.josephee.cs462.common.model.event.CreateEvent;
+import com.josephee.cs462.common.model.event.UpdatedEvent;
 import com.josephee.cs462.common.model.job.JobModel;
 import com.josephee.cs462.common.path.EventPaths;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,14 @@ public class JobEventDispatcherClient extends EventDispatcherClient {
 
     public void jobCreated(CreateEvent<JobModel> event) {
         String path = EventPaths.EVENTS_JOBS_CREATE;
+        List<String> otherServiceBases = getOtherServiceBases();
+        for(String otherServiceBase: otherServiceBases) {
+            ResponseEntity<String> response = restTemplate.postForEntity(otherServiceBase + path, event, String.class);
+        }
+    }
+
+    public void jobUpdated(UpdatedEvent<JobModel> event) {
+        String path = EventPaths.EVENTS_JOBS_UPDATE;
         List<String> otherServiceBases = getOtherServiceBases();
         for(String otherServiceBase: otherServiceBases) {
             ResponseEntity<String> response = restTemplate.postForEntity(otherServiceBase + path, event, String.class);

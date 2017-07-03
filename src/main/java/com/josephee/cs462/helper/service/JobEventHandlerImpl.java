@@ -2,6 +2,7 @@ package com.josephee.cs462.helper.service;
 
 import com.josephee.cs462.common.handler.JobEventHandler;
 import com.josephee.cs462.common.model.event.CreateEvent;
+import com.josephee.cs462.common.model.event.UpdatedEvent;
 import com.josephee.cs462.common.model.job.JobModel;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,11 @@ public class JobEventHandlerImpl extends JobEventHandler {
 
     @Override
     public void jobCreatedChild(CreateEvent<JobModel> event) {
+        // Do nothing
+    }
+
+    @Override
+    protected void jobUpdatedChild(UpdatedEvent<JobModel> event) {
         // Do nothing
     }
 }

@@ -7,4 +7,5 @@ public class EventPaths {
     // Jobs
     private static final String EVENTS_JOBS = EVENTS + "/jobs";
     public static final String EVENTS_JOBS_CREATE = EVENTS_JOBS + "/create";
+    public static final String EVENTS_JOBS_UPDATE = EVENTS_JOBS + "/update";
 }

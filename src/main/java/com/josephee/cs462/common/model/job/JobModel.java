@@ -1,10 +1,7 @@
 package com.josephee.cs462.common.model.job;
 
-import lombok.ToString;
-
 import java.time.ZonedDateTime;
 
-@ToString
 public class JobModel {
 
     private Long id;
@@ -62,5 +59,16 @@ public class JobModel {
 
     public void setRendevousTime(ZonedDateTime rendevousTime) {
         this.rendevousTime = rendevousTime;
+    }
+
+    @Override
+    public String toString() {
+        return "JobModel{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                ", jobTime=" + jobTime +
+                ", rendevousTime=" + rendevousTime +
+                '}';
     }
 }

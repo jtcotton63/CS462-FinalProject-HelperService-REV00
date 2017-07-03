@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS helpers.helper;
+
+CREATE TABLE helpers.helper (
+	id BIGINT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	last_name VARCHAR(255) NOT NULL,
+	first_name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL
+);

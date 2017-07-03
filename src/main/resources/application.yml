@@ -1,6 +1,3 @@
-server:
-  port: 6302
-
 spring:
   application:
     name: helper-service

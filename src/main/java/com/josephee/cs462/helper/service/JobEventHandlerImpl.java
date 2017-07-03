@@ -15,6 +15,6 @@ public class JobEventHandlerImpl extends JobEventHandler {
 
     @Override
     public void jobCreatedChild(CreateEvent<JobModel> event) {
-        // TODO Implement me
+        // Do nothing
     }
 }

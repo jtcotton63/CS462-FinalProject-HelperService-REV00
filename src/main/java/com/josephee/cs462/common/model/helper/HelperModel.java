@@ -1,4 +1,4 @@
-package com.josephee.cs462.job.model;
+package com.josephee.cs462.common.model.helper;
 
 public class HelperModel {
 

@@ -1,6 +1,6 @@
-package com.josephee.cs462.job.domain;
+package com.josephee.cs462.helper.domain;
 
-import com.josephee.cs462.job.model.HelperModel;
+import com.josephee.cs462.common.model.helper.HelperModel;
 
 import javax.persistence.*;
 

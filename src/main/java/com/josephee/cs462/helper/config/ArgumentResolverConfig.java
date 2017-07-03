@@ -1,4 +1,4 @@
-package com.josephee.cs462.job.config;
+package com.josephee.cs462.helper.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;

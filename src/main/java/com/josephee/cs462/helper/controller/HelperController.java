@@ -1,7 +1,7 @@
-package com.josephee.cs462.job.controller;
+package com.josephee.cs462.helper.controller;
 
-import com.josephee.cs462.job.model.HelperModel;
-import com.josephee.cs462.job.service.HelperService;
+import com.josephee.cs462.common.model.helper.HelperModel;
+import com.josephee.cs462.helper.service.HelperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

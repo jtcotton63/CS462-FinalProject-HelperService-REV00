@@ -1,8 +1,8 @@
-package com.josephee.cs462.job.service;
+package com.josephee.cs462.helper.service;
 
-import com.josephee.cs462.job.domain.Helper;
-import com.josephee.cs462.job.model.HelperModel;
-import com.josephee.cs462.job.repository.HelperRepository;
+import com.josephee.cs462.helper.domain.Helper;
+import com.josephee.cs462.common.model.helper.HelperModel;
+import com.josephee.cs462.helper.repository.HelperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

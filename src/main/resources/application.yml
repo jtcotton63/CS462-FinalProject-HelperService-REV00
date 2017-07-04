@@ -17,9 +17,14 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 urls:
-  http: http://
-  self: ${urls.http}ec2-34-211-205-116.us-west-2.compute.amazonaws.com
-  service:
-    helper: ${urls.http}ec2-34-211-205-116.us-west-2.compute.amazonaws.com
+  scheme: http://
+  hosts:
+    helper: ec2-34-211-205-116.us-west-2.compute.amazonaws.com
     job: ${urls.http}ec2-52-36-117-25.us-west-2.compute.amazonaws.com
     message: ${urls.http}ec2-34-212-183-115.us-west-2.compute.amazonaws.com
+  port: 8080
+  self: ${urls.scheme}${urls.hosts.helper}:{$urls.port}
+  service:
+    helper: ${urls.scheme}${urls.hosts.helper}:{$urls.port}
+    job: ${urls.scheme}${urls.hosts.job}:{$urls.port}
+    message: ${urls.scheme}${urls.hosts.message}:{$urls.port}

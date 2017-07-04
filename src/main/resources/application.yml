@@ -1,12 +1,12 @@
 spring:
   application:
-    name: helper-service
+    name: user-service
   datasource:
     initial-size: 3
     max-active: 25
     password: i_hate_cs462
     test-on-borrow: true
-    url: jdbc:mysql://cs462-final-project-db-3.cyacdms6sqds.us-west-2.rds.amazonaws.com:3306/helpers
+    url: jdbc:mysql://cs462-final-project-db-3.cyacdms6sqds.us-west-2.rds.amazonaws.com:3306/users
     username: root
     validation-query: SELECT 1
   jpa:
@@ -19,12 +19,12 @@ spring:
 urls:
   scheme: http://
   hosts:
-    helper: ec2-34-211-205-116.us-west-2.compute.amazonaws.com
-    job: ${urls.http}ec2-52-36-117-25.us-west-2.compute.amazonaws.com
-    message: ${urls.http}ec2-34-212-183-115.us-west-2.compute.amazonaws.com
+    job: ec2-52-36-117-25.us-west-2.compute.amazonaws.com
+    message: ec2-34-212-183-115.us-west-2.compute.amazonaws.com
+    user: ec2-34-211-205-116.us-west-2.compute.amazonaws.com
   port: 8080
-  self: ${urls.scheme}${urls.hosts.helper}:{$urls.port}
+  self: ${urls.scheme}${urls.hosts.user}:{$urls.port}
   service:
-    helper: ${urls.scheme}${urls.hosts.helper}:{$urls.port}
     job: ${urls.scheme}${urls.hosts.job}:{$urls.port}
     message: ${urls.scheme}${urls.hosts.message}:{$urls.port}
+    user: ${urls.scheme}${urls.hosts.user}:{$urls.port}

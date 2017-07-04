@@ -10,8 +10,8 @@ class EventDispatcherClient extends Client {
 
     @Value("${urls.self}")
     private String self;
-    @Value("${urls.service.helper}")
-    private String helperServiceBase;
+    @Value("${urls.service.user}")
+    private String userServiceBase;
     @Value("${urls.service.job}")
     private String jobServiceBase;
     @Value("${urls.service.message}")
@@ -22,12 +22,12 @@ class EventDispatcherClient extends Client {
     List<String> getOtherServiceBases() {
         if(this.otherServiceBases == null) {
             Assert.notNull(self);
-            Assert.notNull(helperServiceBase);
+            Assert.notNull(userServiceBase);
             Assert.notNull(jobServiceBase);
             Assert.notNull(messageServiceBase);
 
             this.otherServiceBases = new ArrayList<>();
-            this.otherServiceBases.add(helperServiceBase);
+            this.otherServiceBases.add(userServiceBase);
             this.otherServiceBases.add(jobServiceBase);
             this.otherServiceBases.add(messageServiceBase);
             Assert.isTrue(this.otherServiceBases.remove(self));

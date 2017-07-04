@@ -1,16 +1,19 @@
-package com.josephee.cs462.common.model.helper;
+package com.josephee.cs462.common.model.user;
 
-public class HelperModel {
+public class UserModel {
 
     private Long id;
     private String lastName;
     private String firstName;
     private String email;
+    private String username;
+    private String password;
+    private Role role;
 
-    public HelperModel() {
+    public UserModel() {
     }
 
-    public HelperModel(Long id, String lastName, String firstName, String email) {
+    public UserModel(Long id, String lastName, String firstName, String email) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -47,5 +50,29 @@ public class HelperModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

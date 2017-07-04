@@ -1,4 +1,4 @@
-package com.josephee.cs462.helper.service;
+package com.josephee.cs462.user.service;
 
 import com.josephee.cs462.common.handler.JobEventHandler;
 import com.josephee.cs462.common.model.event.CreateEvent;

@@ -7,6 +7,6 @@ urls:
   localhost: http://localhost
   self: ${urls.localhost}:6302
   service:
-    helper: ${urls.localhost}:6302
 #    job: ${urls.localhost}:6301
 #    message: ${urls.localhost}:6303
+    user: ${urls.localhost}:6302

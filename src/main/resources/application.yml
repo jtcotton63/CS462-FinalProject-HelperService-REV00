@@ -23,8 +23,8 @@ urls:
     message: ec2-34-212-183-115.us-west-2.compute.amazonaws.com
     user: ec2-34-211-205-116.us-west-2.compute.amazonaws.com
   port: 8080
-  self: ${urls.scheme}${urls.hosts.user}:{$urls.port}
+  self: ${urls.scheme}${urls.hosts.job}:${urls.port}
   service:
-    job: ${urls.scheme}${urls.hosts.job}:{$urls.port}
-    message: ${urls.scheme}${urls.hosts.message}:{$urls.port}
-    user: ${urls.scheme}${urls.hosts.user}:{$urls.port}
+    job: ${urls.scheme}${urls.hosts.job}:${urls.port}
+    message: ${urls.scheme}${urls.hosts.message}:${urls.port}
+    user: ${urls.scheme}${urls.hosts.user}:${urls.port}

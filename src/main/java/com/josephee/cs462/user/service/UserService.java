@@ -3,6 +3,7 @@ package com.josephee.cs462.user.service;
 import com.josephee.cs462.common.model.user.Role;
 import com.josephee.cs462.user.domain.User;
 import com.josephee.cs462.common.model.user.UserModel;
+import com.josephee.cs462.user.model.AuthenticateUserModel;
 import com.josephee.cs462.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -60,5 +61,19 @@ public class UserService {
                 ),
                 usersPage.getTotalElements()
         );
+    }
+
+    public AuthenticateUserModel authenticate(String username, String password) {
+        AuthenticateUserModel auth;
+
+        User user = userRepository.findOneByUsername(username);
+        if(user == null || !user.getPassword().equals(password)) {
+            auth = new AuthenticateUserModel(false);
+            return auth;
+        }
+
+        // They must have been authenticated
+        auth = new AuthenticateUserModel(user.toModel(), true);
+        return auth;
     }
 }

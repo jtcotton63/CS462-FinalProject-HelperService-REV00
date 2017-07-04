@@ -9,5 +9,7 @@ CREATE TABLE users.user (
 	email VARCHAR(255) NOT NULL,
 	username VARCHAR(50) NOT NULL,
 	password VARCHAR(50) NOT NULL,
-	role BIGINT(20) NOT NULL
+	role BIGINT(20) NOT NULL,
+	CONSTRAINT users_user_email_unique UNIQUE(email),
+	CONSTRAINT users_user_username_unique UNIQUE(username)
 );

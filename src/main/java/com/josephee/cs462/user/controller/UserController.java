@@ -39,4 +39,10 @@ public class UserController {
 
         return modelsPage;
     }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public UserModel getUser(@PathVariable Long id) {
+        UserModel userModel = userService.getById(id);
+        return userModel;
+    }
 }

@@ -8,7 +8,6 @@ public class JobModel {
     private String address;
     private String description;
     private ZonedDateTime jobTime;
-    private ZonedDateTime rendevousTime;
     private Long acceptedBy;
     private boolean completed;
 
@@ -16,12 +15,11 @@ public class JobModel {
         this.completed = false;
     }
 
-    public JobModel(Long id, String address, String description, ZonedDateTime jobTime, ZonedDateTime rendevousTime, Long acceptedBy, boolean completed) {
+    public JobModel(Long id, String address, String description, ZonedDateTime jobTime, Long acceptedBy, boolean completed) {
         this.id = id;
         this.address = address;
         this.description = description;
         this.jobTime = jobTime;
-        this.rendevousTime = rendevousTime;
         this.acceptedBy = acceptedBy;
         this.completed = completed;
     }
@@ -58,14 +56,6 @@ public class JobModel {
         this.jobTime = jobTime;
     }
 
-    public ZonedDateTime getRendevousTime() {
-        return rendevousTime;
-    }
-
-    public void setRendevousTime(ZonedDateTime rendevousTime) {
-        this.rendevousTime = rendevousTime;
-    }
-
     public Long getAcceptedBy() {
         return acceptedBy;
     }
@@ -89,7 +79,6 @@ public class JobModel {
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
                 ", jobTime=" + jobTime +
-                ", rendevousTime=" + rendevousTime +
                 ", acceptedBy=" + acceptedBy +
                 ", completed=" + completed +
                 '}';

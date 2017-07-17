@@ -63,6 +63,10 @@ public class UserService {
         );
     }
 
+    public void delete(Long id) {
+        userRepository.delete(id);
+    }
+
     public UserModel getById(Long id) {
         User user = userRepository.findOne(id);
         return user.toModel();
@@ -80,5 +84,9 @@ public class UserService {
         // They must have been authenticated
         auth = new AuthenticationModel(true, user.toModel().getId());
         return auth;
+    }
+
+    public Role[] getRoles() {
+        return Role.values();
     }
 }

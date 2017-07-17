@@ -13,3 +13,6 @@ CREATE TABLE users.user (
 	CONSTRAINT users_user_email_unique UNIQUE(email),
 	CONSTRAINT users_user_username_unique UNIQUE(username)
 );
+
+INSERT INTO users.user (last_name, first_name, email, username, password, role)
+VALUES('Hobson', 'David', 'jtcotton63+david@gmail.com', 'david', 'asdfasdf', 1);

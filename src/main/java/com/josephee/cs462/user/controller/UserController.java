@@ -6,6 +6,8 @@ import com.josephee.cs462.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -40,9 +42,21 @@ public class UserController {
         return modelsPage;
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        userService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public UserModel getUser(@PathVariable Long id) {
         UserModel userModel = userService.getById(id);
         return userModel;
+    }
+
+    @RequestMapping(value = "/roles", method = RequestMethod.GET)
+    public Role[] getRoles() {
+        Role[] roles = userService.getRoles();
+        return roles;
     }
 }

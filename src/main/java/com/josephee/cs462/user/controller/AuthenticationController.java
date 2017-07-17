@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/authenticate")
 public class AuthenticationController {
 
-    private static final int COOKIE_MAX_SECONDS = 12 * 60 * 60;
-
     @Autowired
     private UserService userService;
 
